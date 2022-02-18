@@ -41,7 +41,7 @@ export const checkUser = () => async dispatch => {
 };
 
 export const signout = () => async dispatch => {
-	const response = await ax.get('/signout');
+	await ax.get('/signout');
 
 	dispatch({ type: AUTH_USER, payload: '' });
 };
