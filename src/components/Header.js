@@ -1,9 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './HeaderStyle.css';
 
 const Header = () => {
+	const auth = useSelector(state => state.auth);
 	const ax = axios.create({
 		baseURL: 'http://localhost:3090',
 		withCredentials: true,
@@ -19,7 +21,7 @@ const Header = () => {
 			<Link to='/signup'>Sign Up</Link>
 			<Link to='/signin'>Sign In</Link>
 			<Link to='/signout'>Sign Out</Link>
-			<Link to='/feature'>Feature</Link>
+			{auth ? <Link to='/feature'>Feature</Link> : null}
 			<button onClick={axiosCall}>test</button>
 		</div>
 	);
