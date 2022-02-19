@@ -21,7 +21,7 @@ const Header = () => {
 			<Link to='/signup'>Sign Up</Link>
 			<Link to='/signin'>Sign In</Link>
 			<Link to='/signout'>Sign Out</Link>
-			{auth ? <Link to='/feature'>Feature</Link> : null}
+			{auth.authenticated ? <Link to='/feature'>Feature</Link> : null}
 			<button onClick={axiosCall}>test</button>
 		</div>
 	);
