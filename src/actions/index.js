@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AUTH_USER, AUTH_ERROR } from './types';
 
 const ax = axios.create({
-	baseURL: 'https://quiet-taiga-89593.herokuapp.com',
+	baseURL: 'http://localhost:3090',
 	withCredentials: true,
 });
 
