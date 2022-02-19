@@ -5,7 +5,6 @@ import { AUTH_USER, AUTH_ERROR } from './types';
 const ax = axios.create({
 	baseURL: 'https://quiet-taiga-89593.herokuapp.com',
 	withCredentials: true,
-	credentials: 'include',
 });
 
 export const signIn = (data, callback) => async dispatch => {
