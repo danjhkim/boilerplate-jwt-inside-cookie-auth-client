@@ -3,7 +3,7 @@ import axios from 'axios';
 import { AUTH_USER, AUTH_ERROR } from './types';
 
 const ax = axios.create({
-	baseURL: 'http://localhost:3090',
+	baseURL: 'https://quiet-taiga-89593.herokuapp.com',
 	withCredentials: true,
 });
 
@@ -33,7 +33,7 @@ export const signUp = (data, callback) => async dispatch => {
 
 export const checkUser = () => async dispatch => {
 	try {
-		const response = await ax.get('http://localhost:3090/user');
+		const response = await ax.get('/user');
 		dispatch({ type: AUTH_USER, payload: response.data.email });
 	} catch (err) {
 		dispatch({ type: AUTH_ERROR, payload: err.response.data.error });
